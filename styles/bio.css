@@ -1,1 +1,10 @@
-/*# sourceMappingURL=bio.css.map */
+*,
+* ::before,
+* ::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Verdana;
+  margin: 0;
+}/*# sourceMappingURL=bio.css.map */
