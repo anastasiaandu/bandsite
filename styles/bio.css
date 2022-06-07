@@ -55,10 +55,10 @@
   justify-content: center;
   width: 50%;
   padding-bottom: 0.5rem;
-  font-size: 1rem;
+  font-size: 0.8rem;
 }
 .header__item--active {
-  font-weight: 700;
+  font-weight: 600;
   border-bottom: 4px solid #FFFFFF;
 }
 .header__link {
@@ -94,15 +94,12 @@
   z-index: 1;
 }
 
-.main {
-  margin: 0 1rem;
-}
-
 .about {
   display: flex;
   flex-direction: column;
+  margin: 0 1rem;
 }
-.about__header {
+.about__heading {
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 600;
@@ -111,7 +108,7 @@
 }
 .about__quote {
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 0.9rem;
   line-height: 1.5rem;
 }
 .about__quote--text {
@@ -121,6 +118,9 @@
   margin-top: 0;
 }
 
+.article {
+  margin: 0 1rem;
+}
 .article__heading {
   font-weight: 600;
   font-size: 1rem;
@@ -131,21 +131,55 @@
   line-height: 1.25rem;
   margin: 1rem 0;
 }
-.article__text--bottom {
-  margin-bottom: 0;
-}
 
 .gallery {
   display: flex;
   flex-direction: column;
+  background-color: #FAFAFA;
+  padding: 0 1rem;
 }
 .gallery__heading {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 600;
   margin-top: 1.5rem;
   margin-bottom: 1rem;
 }
 .gallery__image {
   margin-bottom: 1rem;
 }
-.gallery__image--bottom {
+
+.footer {
+  padding: 1.5rem 1rem 1rem 1rem;
+  background-color: #323232;
+  color: #FFFFFF;
+  font-size: 0.8rem;
+  line-height: 1.25rem;
+}
+.footer__heading {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+.footer__icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 1.2rem;
+}
+.footer__section {
+  margin-bottom: 2rem;
+}
+.footer__section-heading {
+  font-weight: 700;
+}
+.footer__logo {
+  font-weight: 400;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  margin: 4rem 0 1rem 0;
+}
+.footer__rights {
   margin-bottom: 0;
 }/*# sourceMappingURL=bio.css.map */

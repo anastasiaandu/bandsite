@@ -43,11 +43,11 @@
         justify-content: center;
         width: 50%;
         padding-bottom: 0.5rem;
-        font-size: 1rem;
+        font-size: 0.8rem;
 
 
         &--active {
-            font-weight: 700;
+            font-weight: 600;
             border-bottom: 4px solid colors.$white;
         }
     }
@@ -88,15 +88,12 @@
     }
 }
 
-.main {
-    margin: 0 1rem;
-}
-
 .about {
     display: flex;
     flex-direction: column;
+    margin: 0 1rem;
 
-    &__header {
+    &__heading {
         font-size: 1.5rem;
         line-height: 2rem;
         font-weight: 600;
@@ -106,7 +103,7 @@
 
     &__quote {
         font-weight: 700;
-        font-size: 1rem;
+        font-size: 0.9rem;
         line-height: 1.5rem;
 
         &--text {
@@ -120,6 +117,7 @@
 }
 
 .article {
+    margin: 0 1rem;
 
     &__heading {
         font-weight: 600;
@@ -131,28 +129,66 @@
         font-size: 0.9rem;
         line-height: 1.25rem;
         margin: 1rem 0;
-
-        &--bottom {
-            margin-bottom: 0;
-        }
     }
 }
 
 .gallery {
     display: flex;
     flex-direction: column;
+    background-color: colors.$alabaster;
+    padding: 0 1rem;
 
     &__heading {
+        font-size: 1.5rem;
+        line-height: 2rem;
+        font-weight: 600;
         margin-top: 1.5rem;
         margin-bottom: 1rem;
     }
 
     &__image {
         margin-bottom: 1rem;
+    }
+}
 
-        &--bottom {
-            margin-bottom: 0;
-        }
+.footer {
+    padding: 1.5rem 1rem 1rem 1rem;
+    background-color: colors.$bandsite-black;
+    color: colors.$white;
+    font-size: 0.8rem;
+    line-height: 1.25rem;
+
+    &__heading {
+        font-size: 1.5rem;
+        line-height: 2rem;
+        font-weight: 600;
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+
+    &__icon {
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-right: 1.2rem;
+    }
+
+    &__section {
+        margin-bottom: 2rem;
+    }
+
+    &__section-heading {
+        font-weight: 700;
+    }
+
+    &__logo {
+        font-weight: 400;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        margin: 4rem 0 1rem 0;
+    }
+
+    &__rights {
+        margin-bottom: 0;
     }
 }
 
