@@ -11,48 +11,52 @@
     <link rel="stylesheet" href="./styles/bio.css"/>
 </head>
 <body class="body">
+    <!-- header with logo, links and hero -->
     <header class="header">
         <h2 class="header__logo">
             Bandsite
         </h2>
         <nav class="header__nav">
             <ul class="header__list">
-                <li class="header__item header__item--active">Biography</li>
-                <li class="header__item">Shows</li>
+                <li class="header__item header__item--active"><a href="#" class="header__link">Biography</a></li>
+                <li class="header__item"><a href="#" class="header__link">Shows</a></li>
             </ul>
         </nav>
-    </header>
-    <main>
         <section class="hero">
             <h2 class="hero__text">
                 The Bees Knees
             </h2>
             <div class="hero__overlay"></div>
         </section>
-        <section>
-            <h2 class="musicians">
+    </header>
+    <!-- main section with about section, articles and photo gallery -->
+    <main class="main">
+        <section class="about">
+            <h2 class="about__header">
                 About the Musicians
             </h2>
-            <img src="./assets/images/band.jpg" alt="An image of a band at a night concert.">
-            <blockquote>
-                <p>
-                    “We push each other to be the best. It’s not uncommon for one of us to say ‘this needs to be better, back to the drawing board’”<br><br>
+            <img src="./assets/images/band.jpg" alt="An image of a band at a night concert." class="about__image">
+            <div>
+                <p class="about__quote about__quote--text">
+                    “We push each other to be the best. It’s not uncommon for one of us to say ‘this needs to be better, back to the drawing board’”
+                </p>
+                <p class="about__quote about__quote--source">
                     - Bryan Teddy, lead vocalist of The Bees Knees
                 </p>
-            </blockquote>
+            </div>
         </section>
-        <section>
+        <section class="article">
             <article>
-                <h3>
+                <h3 class="article__heading">
                     The Bees Knees
                 </h3>
-                <p>
+                <p class="article__text">
                     The Bees Knees is a pop rock band originating from San Francisco, California. 
                     The band consists of lead vocalist Bryan Teddy, guitarist Mack Tolkens, guitarist Andrew Green, bassist Kent Zulkee and drummer Freddie Fischer. 
                     The band achieved its first commercial success as an unsigned act, drawing attention from manager Cam Adams. 
                     Having worked with other popular acts (The Elephant In The Room, One Trick Pony, The Cat’s Meow), Adams was confident the band could succeed even further, pushing them to sign with Magenta Records.
                 </p>
-                <p>
+                <p class="article__text article__text--bottom">
                     From there, the band has soared, gaining international recognition and ranking in the top 10 on the Poster Charts. 
                     New fans immediately fell in love with the band’s original and organic attitude, solidifying their place as one of the hottest and fastest up and coming acts of this century. 
                     Fans affectionately refer to themselves as “The Hive” and are drawn to their candid and authentic performances on stage. 
@@ -60,22 +64,23 @@
                 </p>
             </article>
         </section>
-        <section>
-            <h2>
+        <section class="gallery">
+            <h2 class="gallery__heading">
                 Photo Gallery
             </h2>
-            <img src="./assets/images/Photo-gallery-1.jpg" alt="A picture of people at a concert-1">
-            <img src="./assets/images/Photo-gallery-2.jpg" alt="A picture of people at a concert-2">
-            <img src="./assets/images/Photo-gallery-3.jpg" alt="A picture of people at a concert-3">
-            <img src="./assets/images/Photo-gallery-4.jpg" alt="A picture of people at a concert-4">
-            <img src="./assets/images/Photo-gallery-5.jpg" alt="A picture of people at a concert-5">
-            <img src="./assets/images/Photo-gallery-6.jpg" alt="A picture of people at a concert-6">
-            <img src="./assets/images/Photo-gallery-7.jpg" alt="A picture of people at a concert-7">
-            <img src="./assets/images/Photo-gallery-8.jpg" alt="A picture of people at a concert-8">
-            <img src="./assets/images/Photo-gallery-9.jpg" alt="A picture of people at a concert-9">
+            <img src="./assets/images/Photo-gallery-1.jpg" alt="A picture of people at a concert-1" class="gallery__image">
+            <img src="./assets/images/Photo-gallery-2.jpg" alt="A picture of people at a concert-2" class="gallery__image">
+            <img src="./assets/images/Photo-gallery-3.jpg" alt="A picture of people at a concert-3" class="gallery__image">
+            <img src="./assets/images/Photo-gallery-4.jpg" alt="A picture of people at a concert-4" class="gallery__image">
+            <img src="./assets/images/Photo-gallery-5.jpg" alt="A picture of people at a concert-5" class="gallery__image">
+            <img src="./assets/images/Photo-gallery-6.jpg" alt="A picture of people at a concert-6" class="gallery__image">
+            <img src="./assets/images/Photo-gallery-7.jpg" alt="A picture of people at a concert-7" class="gallery__image">
+            <img src="./assets/images/Photo-gallery-8.jpg" alt="A picture of people at a concert-8" class="gallery__image">
+            <img src="./assets/images/Photo-gallery-9.jpg" alt="A picture of people at a concert-9" class="gallery__image gallery__image--bottom">
         </section>
     </main>
-    <footer>
+    <footer class="footer">
+        <!-- footer section with socials and addresses -->
         <h2>
             Get in Touch
         </h2>
