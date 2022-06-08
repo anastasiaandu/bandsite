@@ -35,6 +35,12 @@
     }
 }
 
+@mixin mid {
+    @media (min-width: screens.$mid-breakpoint) {
+        @content;
+    }
+}
+
 @mixin desktop {
     @media (min-width: screens.$desktop-breakpoint) {
         @content;
