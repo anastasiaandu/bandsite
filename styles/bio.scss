@@ -37,6 +37,7 @@
         margin-bottom: 0.5rem;
 
         @include mixins.tablet {
+            font-size: 1.5rem;
             margin: 1.5rem 4rem 1rem 2.25rem;
         }
 
@@ -89,11 +90,11 @@
 
         &--active {
             font-weight: 600;
-            border-bottom: 3px solid colors.$white;
+            border-bottom: 3.5px solid colors.$white;
         }
         
         &:hover {
-            border-bottom: 3px solid colors.$white;
+            border-bottom: 3.5px solid colors.$white;
         }
     }
 }
@@ -179,7 +180,7 @@
     }
 
     &__quote {
-        font-size: 0.9rem;
+        font-size: 1rem;
         line-height: 1.5rem;
 
         @include mixins.tablet {
@@ -207,11 +208,11 @@
         }
 
         &--source {
-            font-weight: 600;
+            font-weight: 700;
             margin-top: 0;
 
-            @include mixins.desktop {
-                font-size: 1rem;
+            @include mixins.tablet {
+                font-weight: 600;
             }
         }
     }
@@ -236,14 +237,9 @@
         line-height: 1.5rem;
 
         @include mixins.tablet {
-            font-weight: 700;
             font-size: 1.5rem;
             line-height: 2rem;
             margin-top: 2.25rem;
-        }
-
-        @include mixins.desktop {
-            font-weight: 600;
         }
     }
 
@@ -316,8 +312,13 @@
         margin-bottom: 1rem;
 
         @include mixins.tablet {
-            max-width: 32%;
-            margin-bottom: 1.5vw;
+            max-width: 31%;
+            margin-bottom: 3vw;
+        }
+
+        @include mixins.desktop {
+            max-width: 31.75%;
+            margin-bottom: 1.7vw;
         }
     }
 }
@@ -334,6 +335,10 @@
         margin-top: 1.125rem;
         padding: 1.5rem 2.25rem 2.25rem 2.25rem;
         position: relative;
+    }
+
+    @include mixins.desktop {
+        padding: 1.5rem 8rem 2.25rem 8rem;
     }
 
     &__contact {
@@ -353,6 +358,11 @@
             margin-top: 1.5rem;
             margin-right: 2.5rem;
         }
+
+        @include mixins.desktop {
+            margin-right: 3.5rem;
+        }
+    
     }
 
     &__icon {
@@ -362,7 +372,7 @@
 
         @include mixins.tablet {
             margin-bottom: -0.6rem;
-            margin-right: 2rem;
+            margin-right: 1.8rem;
         }
     }
 
@@ -371,10 +381,18 @@
             display: flex;
             justify-content: space-between;
         }
+
+        @include mixins.desktop {
+            justify-content: flex-start;
+        }
     }
 
     &__section {
         margin-bottom: 2rem;
+
+        @include mixins.desktop {
+            margin-right: 4rem;
+        }
     }
 
     &__section-heading {
@@ -386,10 +404,15 @@
         margin: 4rem 0 1rem 0;
 
         @include mixins.tablet {
+            font-size: 1.5rem;
             margin-top: 1rem;
             position: absolute;
             top: 3rem;
             right: 2.25rem;
+        }
+
+        @include mixins.desktop {
+            right: 8rem;
         }
     }
 
