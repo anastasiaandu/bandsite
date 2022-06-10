@@ -44,7 +44,11 @@
     padding: 0 5rem;
   }
 }
+.header__wordmark {
+  margin: 0;
+}
 .header__logo {
+  text-decoration: none;
   color: #FFFFFF;
   font-weight: 400;
   font-size: 1.75rem;
@@ -52,6 +56,7 @@
   display: flex;
   justify-content: center;
   margin-bottom: 0.5rem;
+  margin-top: 1rem;
 }
 @media (min-width: 48rem) {
   .header__logo {
@@ -380,7 +385,7 @@
   }
 }
 @media (min-width: 48rem) {
-  .footer__contact {
+  .footer__header {
     display: flex;
     align-items: center;
   }

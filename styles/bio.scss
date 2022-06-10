@@ -29,12 +29,18 @@
         padding: 0 5rem;
     }
 
+    &__wordmark {
+        margin: 0;
+    }
+
     &__logo {
+        text-decoration: none;
         color: colors.$white;
         @include mixins.logo;
         display: flex;
         justify-content: center;
         margin-bottom: 0.5rem;
+        margin-top: 1rem;
 
         @include mixins.tablet {
             font-size: 1.5rem;
@@ -341,7 +347,7 @@
         padding: 1.5rem 8rem 2.25rem 8rem;
     }
 
-    &__contact {
+    &__header {
         @include mixins.tablet {
             display: flex;
             align-items: center;
