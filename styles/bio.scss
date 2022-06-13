@@ -311,6 +311,11 @@
 
     &__image {
         margin-bottom: 1rem;
+        filter: opacity(30%);
+
+        &:hover {
+            filter: none;
+        }
 
         @include mixins.tablet {
             max-width: 31%;
@@ -398,6 +403,11 @@
 
     &__section-heading {
         font-weight: 600;
+    }
+
+    &__mail-link {
+        text-decoration: none;
+        color: colors.$white;
     }
 
     &__logo {

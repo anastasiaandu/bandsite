@@ -343,6 +343,10 @@
 }
 .gallery__image {
   margin-bottom: 1rem;
+  filter: opacity(30%);
+}
+.gallery__image:hover {
+  filter: none;
 }
 @media (min-width: 48rem) {
   .gallery__image {
@@ -436,6 +440,10 @@
 }
 .footer__section-heading {
   font-weight: 600;
+}
+.footer__mail-link {
+  text-decoration: none;
+  color: #FFFFFF;
 }
 .footer__logo {
   font-weight: 400;
