@@ -9,7 +9,7 @@
 
 @mixin mobile-margin {
     margin-top: 1.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 @mixin tablet-heading {
@@ -19,6 +19,11 @@
 }
 
 @mixin tablet-margin {
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+@mixin desktop-margin {
     margin-top: 3rem;
     margin-bottom: 2.25rem;
 }

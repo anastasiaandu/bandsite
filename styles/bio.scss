@@ -1,6 +1,7 @@
 @use './partials/colors';
 @use './partials/fonts';
 @use './partials/mixins';
+@use './partials/borders';
 
 
 *,
@@ -41,6 +42,7 @@
         justify-content: center;
         margin-bottom: 0.5rem;
         margin-top: 1rem;
+        transition: transform 0.3s;
 
         @include mixins.tablet {
             font-size: 1.5rem;
@@ -49,6 +51,10 @@
 
         @include mixins.desktop {
             margin-top: 2rem;
+        }
+
+        &:hover {
+            transform: scale(1.2);
         }
     }
 
@@ -81,6 +87,8 @@
         width: 50%;
         padding-bottom: 0.5rem;
         font-size: 0.8rem;
+        position: relative;
+        
 
         @include mixins.tablet {
             padding-top: 1.75rem;
@@ -96,11 +104,25 @@
 
         &--active {
             font-weight: 600;
-            border-bottom: 3.5px solid colors.$white;
+            border-bottom: borders.$underline;
         }
-        
-        &:hover {
-            border-bottom: 3.5px solid colors.$white;
+
+        &--inactive {
+            &::after {
+                content: "";
+                position: absolute;
+                width: 0%;
+                height: 3.5px;
+                display: block;
+                transition: all 0.3s ease;
+                bottom: 0;
+            }
+    
+            &:hover::after {
+                width: 100%;
+                height: 3.5px;
+                background-color: colors.$white;
+            }
         }
     }
 }
@@ -173,6 +195,10 @@
             @include mixins.tablet-heading;
             @include mixins.tablet-margin;
         }
+
+        @include mixins.desktop {
+            @include mixins.desktop-margin;
+        }
     }
 
     &__image {
@@ -244,6 +270,10 @@
             line-height: 2rem;
             margin-top: 2.25rem;
         }
+
+        @include mixins.desktop {
+            margin-bottom: 1.5rem;
+        }
     }
 
     &__texts {
@@ -294,6 +324,10 @@
         @include mixins.tablet {
             @include mixins.tablet-heading;
             @include mixins.tablet-margin;
+        }
+
+        @include mixins.desktop {
+            @include mixins.desktop-margin;
         }
     }
 
@@ -367,18 +401,23 @@
 
         @include mixins.desktop {
             margin-right: 3.5rem;
+            margin-bottom: 1.25rem;
         }
-    
     }
 
     &__icon {
         width: 1.5rem;
         height: 1.5rem;
         margin-right: 1.2rem;
+        transition: transform 0.3s;
 
         @include mixins.tablet {
-            margin-bottom: -0.6rem;
+            margin-bottom: -0.5rem;
             margin-right: 1.8rem;
+        }
+
+        &:hover {
+            transform: scale(1.2);
         }
     }
 
