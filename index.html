@@ -13,9 +13,8 @@
 <body class="body">
     <!-- header with logo, links and hero -->
     <header class="header">
-        <h2 class="header__wordmark">
             <a href="./index.html" class="header__logo">
-                Bandsite
+                <img src="./assets/logos/Logo-bandsite.svg" alt="Band Logo">
             </a>
         </h2>
         <nav class="header__nav">
@@ -84,6 +83,87 @@
                 <img src="./assets/images/Photo-gallery-9.jpg" alt="A picture of people at a concert-9" class="gallery__image">
             </div>
         </section>
+        <section class="comment">
+            <h2 class="comment__heading">
+                Join the Conversation
+            </h2>
+            <article class="comment__body">
+                <div class="comment__new">
+                    <img src="./assets/images/Mohan-muruge.jpg" alt="profile picture" class="comment__avatar">
+                    <form class="comment__form">
+                        <label for="user-name" class="comment__label">Name</label> 
+                        <input type="text" placeholder="Enter your name" id="user-name" class="comment__input-name" name="name">
+    
+                        <label for="user-comment" class="comment__label">Comment</label>
+                        <input type="text" placeholder="Add a new comment" id="user-comment" class="comment__input-conversation" name="comment">
+    
+                        <button type="submit" class="comment__send">Comment</button>
+                        <p class="comment__validation"></p>
+                    </form>
+                </div>
+                <div class="comment__divider"></div>
+                <div class="comment__old">
+                    <img src="#" alt="profile picture" class="comment__avatar comment__avatar--new">
+                    <div>
+                        <div class="comment__info">
+                            <div class="comment__writer">
+                                Connor Walton
+                            </div>
+                            <div class="comment__date">
+                                02/17/2021
+                            </div>
+                        </div>
+                        <p>
+                            This is art. 
+                            This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. 
+                            Let us appreciate this for what it is and what it contains.
+                        </p>
+                    </div>
+                </div>
+                <div class="comment__divider"></div>
+                <div class="comment__old">
+                    <img src="#" alt="profile picture" class="comment__avatar comment__avatar--new">
+                    <div>
+                        <div class="comment__info">
+                            <div class="comment__writer">
+                                Emilie Beach
+                            </div>
+                            <div class="comment__date">
+                                01/09/2021
+                            </div>
+                        </div>
+                        <p>
+                            I feel blessed to have seen them in person. 
+                            What a show! They were just perfection. 
+                            If there was one day of my life I could relive, this would be it. 
+                            What an incredible day.
+                        </p>
+                    </div>
+                </div>
+                <div class="comment__divider"></div>
+                <div class="comment__old">
+                    <img src="#" alt="profile picture" class="comment__avatar comment__avatar--new">
+                    <div>
+                        <div class="comment__info">
+                            <div class="comment__writer">
+                                Miles Acosta
+                            </div>
+                            <div class="comment__date">
+                                12/20/2020
+                            </div>
+                        </div>
+                        <p>
+                            I can't stop listening. 
+                            Every time I hear one of their songs - the vocals - it gives me goosebumps. 
+                            Shivers straight down my spine. 
+                            What a beautiful expression of creativity. 
+                            Can't get enough.
+                        </p>
+                    </div>
+                </div>
+                <div class="comment__divider"></div>
+            </article>
+        </section>
     </main>
     <!-- footer section with socials and addresses -->
     <footer class="footer">
@@ -142,9 +222,9 @@
                 </p>
             </div>
         </div>
-        <h2 class="footer__logo">
-            Bandsite
-        </h2>
+        <a href="./index.html" class="footer__logo">
+            <img src="./assets/logos/Logo-bandsite.svg" alt="Band Logo">
+        </a>
         <p class="footer__rights">
             Copyright The Bees Knees © 2021 All Rights Reserved
         </p>

@@ -1,22 +1,24 @@
 @use './colors';
 @use './mixins';
-@use './borders';
+@use './variables';
 
 
 .header {
     background-color: colors.$bandsite-black;
     display: flex;
     flex-direction: column;
-    position: fixed;
-    z-index: 3;
-    width: 100%;
+    // position: fixed;
+    // width: 100%;
+    // z-index: 3;
 
     @include mixins.tablet {
+        padding: 0 2.25rem;
         flex-direction: row;
+        justify-content: flex-start;
     }
 
     @include mixins.desktop {
-        padding: 0 5rem;
+        padding: 0 8rem;
     }
 
     &__wordmark {
@@ -24,18 +26,14 @@
     }
 
     &__logo {
-        text-decoration: none;
-        color: colors.$white;
-        @include mixins.logo;
+        width: 7.5rem;
+        height: 1.25rem;
         display: flex;
-        justify-content: center;
-        margin-bottom: 0.5rem;
-        margin-top: 1rem;
+        margin: 1rem auto;
         transition: transform 0.3s;
 
         @include mixins.tablet {
-            font-size: 1.5rem;
-            margin: 1.5rem 4rem 1rem 3rem;
+            margin: 1.5rem 4rem 1.5rem 0;
         }
 
         @include mixins.desktop {
@@ -43,7 +41,7 @@
         }
 
         &:hover {
-            transform: scale(1.2);
+            transform: variables.$scale;
         }
     }
 
@@ -93,7 +91,7 @@
 
         &--active {
             font-weight: 600;
-            border-bottom: borders.$underline;
+            border-bottom: variables.$underline;
         }
 
         &--inactive {

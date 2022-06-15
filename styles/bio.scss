@@ -34,21 +34,16 @@
             font-size: 3.75rem;
             line-height: 4.25rem;
             font-weight: 600;
-            padding: 0 3rem;
+            padding: 0 2.25rem;
         }
 
         @include mixins.desktop {
-            margin-left: 5rem;
+            margin-left: 5.75rem;
         }
     }
 
     &__overlay {
-        background-color: colors.$bandsite-black;
-        opacity: 0.5;
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        z-index: 1;
+        @include mixins.overlay;
     }
 }
 
@@ -58,7 +53,7 @@
     margin: 0 1rem;
 
     @include mixins.tablet {
-        margin: 0 3rem;
+        margin: 0 2.25rem;
     }
 
     @include mixins.desktop {
@@ -188,11 +183,11 @@
     padding: 0 1rem;
 
     @include mixins.tablet {
-        padding: 0 2.25rem;
+        padding: 0 2.25rem 1rem 2.25rem;
     }
 
     @include mixins.desktop {
-        padding: 0 8rem;
+        padding: 0 8rem 1rem 8rem;
     }
 
     &__heading {
@@ -238,5 +233,157 @@
             max-width: 31.75%;
             margin-bottom: 1.7vw;
         }
+    }
+}
+
+.comment {
+    padding: 0 1rem;
+    margin-bottom: 1rem;
+
+    @include mixins.tablet {
+        padding: 0 2.25rem;
+        margin-bottom: 2.25rem;
+    }
+
+    @include mixins.desktop {
+        padding: 0 8rem;
+    }
+
+    &__heading {
+        @include mixins.mobile-heading;
+        @include mixins.mobile-margin;
+
+        @include mixins.tablet {
+            @include mixins.tablet-heading;
+            @include mixins.tablet-margin;
+        }
+
+        @include mixins.desktop {
+            @include mixins.desktop-margin;
+        }
+    }
+    
+    &__body {
+        @include mixins.tablet {
+            padding: 0 3.75rem
+        }
+
+        @include mixins.desktop {
+            max-width: 60%;
+            margin: 0 auto;
+        }
+    }
+
+    &__new {
+        display: flex;
+    }
+
+    &__avatar {
+        width: 2.25rem;
+        height: 2.25rem;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-right: 1rem;
+        margin-top: 1.25rem;
+        background-color: colors.$mercury;
+
+        @include mixins.tablet {
+            width: 3rem;
+            height: 3rem;
+        }
+
+        &--new {
+            margin-top: 0;
+        }
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    &__label {
+        text-transform: uppercase;
+        font-size: 0.6rem;
+        font-weight: 600;
+        color: colors.$silver;
+        padding: 0.25rem 0;
+
+        @include mixins.tablet {
+            font-size: 0.8rem;
+        }
+    }
+
+    &__input-name {
+        padding: 0.625rem;
+        margin-bottom: 1rem;
+        @include mixins.input;
+
+        @include mixins.tablet {
+            padding: 1rem;
+        }
+
+        // &:focus {
+        //     border: 1px solid colors.$bandsite-black;
+        // }
+    }
+
+    &__input-conversation {
+        padding: 0.625rem 0.625rem 4rem 0.625rem;
+        margin-bottom: 0.5rem;
+        @include mixins.input;
+
+        @include mixins.tablet {
+            padding: 1rem 1rem 4rem 1rem;
+        }
+    }
+
+    &__send {
+        border: none;
+        @include mixins.button;
+        margin-top: 0.5rem;
+        margin-bottom: 1rem;
+
+        @include mixins.tablet {
+            width: 10rem;
+            margin-left: auto;
+            margin-top: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        &:hover {
+            background: colors.$bandsite-darkblack;
+        }
+    }
+
+    &__divider {
+        height: 1px;
+        background-color: colors.$mercury;
+    }
+
+    &__old {
+        display: flex;
+        align-items: flex-start;
+        font-size: 0.8rem;
+        padding-top: 1rem;
+
+        @include mixins.tablet {
+            font-size: 0.9rem;
+            padding: 1.5rem 0 0.5rem 0;
+        }
+    }
+
+    &__info {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__writer {
+        font-weight: 600;
+    }
+
+    &__date {
+        color: colors.$silver;
     }
 }
