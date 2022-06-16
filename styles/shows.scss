@@ -2,6 +2,7 @@
 @use './partials/mixins';
 @use './partials/global';
 @use './partials/header';
+@use './partials/screens';
 @use './partials/footer';
 
 
@@ -130,8 +131,9 @@
     }
 
     &__body {
+        max-width: screens.$tablet-breakpoint;
         @include mixins.desktop {
-            width: 80%;
+            max-width: screens.$desktop-breakpoint;
         }
     }
 

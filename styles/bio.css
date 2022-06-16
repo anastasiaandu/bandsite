@@ -562,6 +562,7 @@ table {
 }
 .comment__new {
   display: flex;
+  border-bottom: 1px solid #E1E1E1;
 }
 .comment__avatar {
   width: 2.25rem;
@@ -627,7 +628,7 @@ table {
     padding: 1rem 1rem 4rem 1rem;
   }
 }
-.comment__send {
+.comment__button {
   border: none;
   display: flex;
   justify-content: center;
@@ -645,25 +646,22 @@ table {
   margin-bottom: 1rem;
 }
 @media (min-width: 48rem) {
-  .comment__send {
+  .comment__button {
     width: 10rem;
     margin-left: auto;
     margin-top: 1rem;
     margin-bottom: 1.5rem;
   }
 }
-.comment__send:hover {
+.comment__button:hover {
   background: #000000;
-}
-.comment__divider {
-  height: 1px;
-  background-color: #E1E1E1;
 }
 .comment__old {
   display: flex;
   align-items: flex-start;
   font-size: 0.8rem;
   padding-top: 1rem;
+  border-bottom: 1px solid #E1E1E1;
 }
 @media (min-width: 48rem) {
   .comment__old {

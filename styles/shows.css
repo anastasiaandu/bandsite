@@ -395,9 +395,12 @@ table {
     margin: 0;
   }
 }
+.shows__body {
+  max-width: 48rem;
+}
 @media (min-width: 80rem) {
   .shows__body {
-    width: 80%;
+    max-width: 80rem;
   }
 }
 .shows__container {

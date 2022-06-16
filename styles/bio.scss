@@ -276,6 +276,7 @@
 
     &__new {
         display: flex;
+        border-bottom: 1px solid colors.$mercury;
     }
 
     &__avatar {
@@ -339,7 +340,7 @@
         }
     }
 
-    &__send {
+    &__button {
         border: none;
         @include mixins.button;
         margin-top: 0.5rem;
@@ -357,16 +358,12 @@
         }
     }
 
-    &__divider {
-        height: 1px;
-        background-color: colors.$mercury;
-    }
-
     &__old {
         display: flex;
         align-items: flex-start;
         font-size: 0.8rem;
         padding-top: 1rem;
+        border-bottom: 1px solid colors.$mercury;
 
         @include mixins.tablet {
             font-size: 0.9rem;
