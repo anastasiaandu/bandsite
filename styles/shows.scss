@@ -122,18 +122,30 @@
     }
 
     &__container {
+        list-style-type: none;
         font-size: 0.8rem;
         font-weight: 500;
         padding: 0 1rem;
 
         @include mixins.tablet {
-            padding: 0 2.25rem;
+            display: flex;
+            align-items: flex-end;
+            margin: 0 1rem;
+            padding: 0.5rem 1.25rem 1rem 1.25rem;
             font-size: 0.9rem;
         }
 
         @include mixins.desktop {
             padding: 0 8rem;
         }
+
+        &:hover {
+            background-color: colors.$alabaster;
+        }
+
+        // &::selection {
+        //     background-color: colors.$mercury;
+        // }
     }
 
     &__detail {
@@ -143,13 +155,54 @@
         color: colors.$silver;
         padding: 0.5rem 0;
 
+
         @include mixins.tablet {
-            font-size: 0.8rem;
+            display: none;
         }
+
+        &--top {
+            display: none;
+
+            @include mixins.tablet {
+                list-style-type: none;
+                display: flex;
+                font-size: 0.8rem;
+                margin: 0;
+                padding: 1rem 2.25rem 0.5rem 2.25rem;
+            }
+        }
+    }
+
+    &__detail-header {
+        width: 11.5rem;
     }
     
     &__date {
         font-weight: 600;
+        padding-bottom: 0.5rem;
+
+        @include mixins.tablet {
+            padding-bottom: 0.75rem;
+            width: 11.5rem;
+        }
+    }
+
+    &__venue {
+        padding-bottom: 0.5rem;
+
+        @include mixins.tablet {
+            padding-bottom: 0.75rem;
+            width: 11.5rem;
+        }
+    }
+
+    &__location {
+        padding-bottom: 0.5rem;
+
+        @include mixins.tablet {
+            padding-bottom: 0.75rem;
+            width: 11rem;
+        }
     }
 
     &__button {
@@ -158,7 +211,9 @@
         margin-bottom: 1rem;
 
         @include mixins.tablet {
-            width: 10rem;
+            width: 9.5rem;
+            margin-bottom: 0rem;
+            align-self: flex-end;
         }
 
         &:hover {
@@ -172,6 +227,12 @@
 
         @include mixins.tablet {
             margin: 0 1rem;
+        }
+    }
+
+    &__table {
+        @include mixins.tablet {
+            width: 100%;
         }
     }
 }

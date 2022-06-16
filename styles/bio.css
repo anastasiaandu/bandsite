@@ -29,6 +29,10 @@
   margin: 0;
 }
 
+table {
+  margin: 0;
+}
+
 .header {
   background-color: #323232;
   display: flex;
