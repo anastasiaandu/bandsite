@@ -261,17 +261,19 @@
   background-position: center;
   background-size: cover;
   height: 45vh;
-  margin: 0;
+  margin: 4.5rem 0 0 0;
   position: relative;
 }
 @media (min-width: 48rem) {
   .hero {
     height: 75vh;
+    margin-top: 4rem;
   }
 }
 @media (min-width: 80rem) {
   .hero {
     height: 100vh;
+    margin-top: 5rem;
   }
 }
 .hero__items {

@@ -15,15 +15,17 @@
     background-position: center;
     background-size: cover;
     height: 45vh;
-    margin: 0;
+    margin: 4.5rem 0 0 0;
     position: relative;
 
     @include mixins.tablet {
         height: 75vh;
+        margin-top: 4rem;
     }
 
     @include mixins.desktop {
         height: 100vh;
+        margin-top: 5rem;
     }
 
     &__items {
