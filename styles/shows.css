@@ -29,14 +29,14 @@
   margin: 0;
 }
 
-table {
-  margin: 0;
-}
-
 .header {
   background-color: #323232;
   display: flex;
   flex-direction: column;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 3;
 }
 @media (min-width: 48rem) {
   .header {

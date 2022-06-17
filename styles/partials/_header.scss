@@ -7,9 +7,10 @@
     background-color: colors.$bandsite-black;
     display: flex;
     flex-direction: column;
-    // position: fixed;
-    // width: 100%;
-    // z-index: 3;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 3;
 
     @include mixins.tablet {
         padding: 0 2.25rem;
