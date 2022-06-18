@@ -265,12 +265,12 @@
   background-position: center;
   background-size: cover;
   height: 45vh;
-  margin: 4.5rem 0 0 0;
+  margin-top: 4.5rem;
   position: relative;
 }
 @media (min-width: 48rem) {
   .hero {
-    height: 75vh;
+    height: 80vh;
     margin-top: 4rem;
   }
 }
@@ -281,14 +281,11 @@
   }
 }
 .hero__items {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   position: relative;
   z-index: 2;
-}
-@media (min-width: 80rem) {
-  .hero__items {
-    display: flex;
-  }
 }
 .hero__small-text {
   margin: 0;
@@ -308,6 +305,14 @@
     padding: 0 8rem;
   }
 }
+@media (min-width: 80rem) {
+  .hero__text-audio {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 8rem;
+  }
+}
 .hero__text {
   color: #FFFFFF;
   font-size: 1.5rem;
@@ -315,7 +320,7 @@
   font-weight: 600;
   padding: 0 1rem;
   margin: 1rem 0;
-  width: 75%;
+  width: 80%;
 }
 @media (min-width: 48rem) {
   .hero__text {
@@ -328,7 +333,8 @@
 @media (min-width: 80rem) {
   .hero__text {
     margin-left: 5.75rem;
-    width: 80%;
+    width: 50%;
+    max-width: 34rem;
   }
 }
 .hero__overlay {
@@ -346,15 +352,15 @@
 }
 @media (min-width: 48rem) {
   .hero__audio {
-    width: 65%;
-    height: 9rem;
-    padding: 0 2.25rem;
+    width: 60%;
+    height: 10rem;
+    padding: 1.5rem 0 0 2.25rem;
   }
 }
 @media (min-width: 80rem) {
   .hero__audio {
-    width: 55%;
-    margin-right: 5rem;
+    width: 40%;
+    max-width: 29rem;
   }
 }
 

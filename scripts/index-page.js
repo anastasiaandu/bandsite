@@ -27,7 +27,6 @@ const commentSection = document.querySelector('.comment__body');
 
 //create a function to loop through the array and display each comment
 function displayComment() {
-
     comments.forEach((comment) => {
         const userComment = document.createElement('div');
         userComment.classList.add('comment__old');
@@ -73,25 +72,4 @@ function displayComment() {
 
 //call the function to display each comment on the bio page
 displayComment();                                 
-
-
-//html comment template
-/* <div class="comment__old">
-        <img src="#" alt="profile picture" class="comment__avatar comment__avatar--new">
-        <div>
-            <div class="comment__info">
-                <div class="comment__writer">
-                    Connor Walton
-                </div>
-                <div class="comment__date">
-                    02/17/2021
-                </div>
-            </div>
-            <p>
-                This is art. 
-                This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. 
-                Let us appreciate this for what it is and what it contains.
-            </p>
-        </div>
-    </div> */
     

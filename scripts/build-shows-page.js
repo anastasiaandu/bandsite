@@ -33,18 +33,21 @@ const shows = [
 ];
 
 
-// function getObjectKey(object, value) {
-//     const heading = Object.keys(object).find((key) => {
-//         return object[key] === value;
-//     });
-//     return heading;
-// }
-
-// console.log(getObjectKey(shows[0], 'Ronald Lane'));
-
-
 //get the parent to which the shows would be appended
-const showSection = document.querySelector('.shows__body');
+const showSection = document.querySelector('.shows');
+
+
+//shows section heading 
+const showsHeading = document.createElement('h2');
+showsHeading.classList.add('shows__heading');
+showsHeading.innerText = 'Shows';
+showSection.appendChild(showsHeading);
+
+
+//shows section article 
+const showsArticle = document.createElement('article');
+showsArticle.classList.add('shows__body');
+showSection.appendChild(showsArticle);
 
 
 //table head
@@ -67,13 +70,12 @@ tableHeadLocation.innerText = 'Location';
 tableHead.appendChild(tableHeadLocation);
 
 
-//append table head to webpage
-showSection.appendChild(tableHead);
+//append table head to article section
+showsArticle.appendChild(tableHead);
 
 
 //create a function to display each show
 function displayShow() {
-
     shows.forEach((show) => {
         //table body
         const tableBody = document.createElement('ul');
@@ -132,8 +134,8 @@ function displayShow() {
         button.innerText = 'Buy Tickets';
         tableListButton.appendChild(button);
 
-        //append comment to webpage
-        showSection.appendChild(tableBody);
+        //append comment to article section
+        showsArticle.appendChild(tableBody);
         console.log(tableBody);
     });
 }
@@ -141,34 +143,3 @@ function displayShow() {
 
 //call the function to display each show on the shows page
 displayShow();
-
-
-//html comment template
-/* <ul class="shows__detail shows__detail--top">
-        <li class="shows__detail-header shows__detail-header--date">
-            Date
-        </li>
-        <li class="shows__detail-header">
-            Venue
-        </li>
-        <li class="shows__detail-header">
-            Location
-        </li>
-    </ul> 
-    <ul class="shows__container">
-        <li>
-            <div class="shows__detail">Date</div>
-            <div class="shows__date">Mon Sept 06 2021</div>
-        </li>
-        <li>
-            <div class="shows__detail">Venue</div>
-            <div class="shows__venue">Ronald Lane </div>
-        </li>
-        <li>
-            <div class="shows__detail">Location</div>
-            <div class="shows__location">San Francisco, CA</div>
-        </li>
-        <li>
-            <a href="https://www.bandsintown.com/" target="_blank" class="shows__button">Buy Tickets</a>
-        </li>
-    </ul>*/
