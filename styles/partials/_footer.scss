@@ -93,7 +93,8 @@
         height: 1.25rem;
         display: flex;
         margin: 4rem 0 1rem 0;
-
+        transition: transform 0.3s;
+        
         @include mixins.tablet {
             margin-top: 0.8rem;
             position: absolute;
@@ -103,6 +104,10 @@
 
         @include mixins.desktop {
             right: 8rem;
+        }
+
+        &:hover {
+            transform: variables.$scale;
         }
     }
 

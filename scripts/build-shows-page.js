@@ -127,6 +127,7 @@ function displayShow() {
 
         const button = document.createElement('a');
         button.setAttribute('href', 'https://www.bandsintown.com/');
+        button.setAttribute('target', '_blank');
         button.classList.add('shows__button');
         button.innerText = 'Buy Tickets';
         tableListButton.appendChild(button);
@@ -168,6 +169,6 @@ displayShow();
             <div class="shows__location">San Francisco, CA</div>
         </li>
         <li>
-            <a href="#" class="shows__button">Buy Tickets</a>
+            <a href="https://www.bandsintown.com/" target="_blank" class="shows__button">Buy Tickets</a>
         </li>
     </ul>*/
