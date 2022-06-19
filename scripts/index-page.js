@@ -2,19 +2,19 @@
 const comments = [
     {
         name: 'Connor Walton',
-        timestamp: '02/17/2021',
-        image: 'https://www.fillmurray.com/640/360',
+        timeStamp: '02/17/2021',
+        image: 'https://loremflickr.com/640/360',
         commentText: 'This is art.This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.'
     },
     {
         name: 'Emilie Beach',
-        timestamp: '01/09/2021',
-        image: 'https://loremflickr.com/640/360',
+        timeStamp: '01/09/2021',
+        image: 'https://placekitten.com/640/360',
         commentText: 'I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.'
     },
     {
         name: 'Miles Acosta',
-        timestamp: '12/20/2020',
+        timeStamp: '12/20/2020',
         image: 'https://placebear.com/640/360',
         commentText: 'I can\'t stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can\'t get enough.'
     }
@@ -22,54 +22,138 @@ const comments = [
 
 
 //get the parent to which the comments would be appended
-const commentSection = document.querySelector('.comment__body');
+const commentSection = document.querySelector('.comment__section');
 
 
-//create a function to loop through the array and display each comment
-function displayComment() {
-    comments.forEach((comment) => {
-        const userComment = document.createElement('div');
-        userComment.classList.add('comment__old');
+// create a function to display each comment
+function displayComment(item) {
+    const userComment = document.createElement('div');
+    userComment.classList.add('comment__old');
 
-        //image element
+    //image element
+    if (item.image === '') {
+        const imageDiv = document.createElement('div');
+        imageDiv.classList.add('comment__avatar-missing');
+        userComment.appendChild(imageDiv);
+    } else {
         const userAvatar = document.createElement('img');
-        userAvatar.setAttribute('src', comment.image)
-        userAvatar.setAttribute('alt', 'profile picture');
+        userAvatar.setAttribute('src', item.image);
         userAvatar.classList.add('comment__avatar', 'comment__avatar--new');
         userComment.appendChild(userAvatar);
+    }
 
-        //comment container
-        const commentContainer = document.createElement('div');
-        userComment.appendChild(commentContainer);
+    //comment container
+    const commentContainer = document.createElement('div');
+    commentContainer.classList.add('comment__old-container');
+    userComment.appendChild(commentContainer);
 
-        //user info
-        const userInfo = document.createElement('div');
-        userInfo.classList.add('comment__info');
-        commentContainer.appendChild(userInfo);
+    //user info
+    const userInfo = document.createElement('div');
+    userInfo.classList.add('comment__info');
+    commentContainer.appendChild(userInfo);
 
-        //user name
-        const userName = document.createElement('div');
-        userName.classList.add('comment__writer');
-        userName.innerText = comment.name;
-        userInfo.appendChild(userName);
+    //user name
+    const userName = document.createElement('div');
+    userName.classList.add('comment__writer');
+    userName.innerText = item.name;
+    userInfo.appendChild(userName);
 
-        //date
-        const date = document.createElement('div');
-        date.classList.add('comment__date');
-        date.innerText = comment.timestamp;
-        userInfo.appendChild(date);
+    //date
+    const date = document.createElement('div');
+    date.classList.add('comment__date');
+    date.innerText = item.timeStamp;
+    userInfo.appendChild(date);
 
-        //comment text
-        const text = document.createElement('p');
-        text.innerText = comment.commentText;
-        commentContainer.appendChild(text);
+    //comment text
+    const text = document.createElement('p');
+    text.innerText = item.commentText;
+    commentContainer.appendChild(text);
 
-        //append comment to webpage
-        commentSection.appendChild(userComment);
-    });
+    //append comment to webpage
+    commentSection.appendChild(userComment);
 }
 
 
-//call the function to display each comment on the bio page
-displayComment();                                 
-    
+// call the function to display each comment on the bio page
+comments.forEach((comment) => {
+    displayComment(comment); 
+});
+
+
+//declare function to get date
+function formatDate(date) {
+    const mm = (date.getMonth() + 1).toString().padStart(2, '0');
+    const dd = date.getDate().toString().padStart(2, '0');
+    const yyyy = date.getFullYear().toString();
+    return `${mm}/${dd}/${yyyy}`;
+}
+
+
+// //declare function to format name to desired case
+// function formatName(string) {
+//     const names = string.split(' ');
+//     console.log(names);
+//     const newNames = names.map((string) => {
+//         return (name.charAt(0).toUpperCase() + name.slice(1));
+//     });
+//     const formattedName = newNames.join(' ');
+//     return formattedName;
+// }
+
+
+//format date
+// function formatDate(date, format) {
+//     const map = {
+//         mm: date.getMonth() + 1,
+//         dd: date.getDate(),
+//         yy: date.getFullYear().toString().slice(-2),
+//         yyyy: date.getFullYear()
+//     }
+
+//     return format.replace(/mm|dd|yy|yyy/gi, matched => map[matched])
+// }
+
+
+//create function to add new comment to the page
+const addComment = ((event) => {
+    event.preventDefault(); 
+
+    commentSection.innerHTML = '';
+
+    const newComment = {};
+    const formFieldName = document.querySelector('.comment__input-name');
+    const formFieldComment = document.querySelector('.comment__input-conversation');
+    const formFieldvalidation = document.querySelector('.comment__validation');
+    const userName = event.target.name.value;
+    const userDate = formatDate(new Date());
+    const userImage = '';
+    const userComment = event.target.comment.value;
+
+    if(userName === '' || userComment === '') {
+        formFieldName.classList.add('comment__input-error');
+        formFieldComment.classList.add('comment__input-error');
+        formFieldvalidation.innerText = '***Please check that you have entered your name or comment***';
+    } else {
+        formFieldName.classList.remove('comment__input-error');
+        formFieldComment.classList.remove('comment__input-error');
+        formFieldvalidation.innerText = '';
+
+        newComment.name = userName;
+        newComment.timeStamp = userDate;
+        newComment.image = userImage;
+        newComment.commentText = userComment;
+
+        comments.unshift(newComment);
+
+        event.target.reset();
+    }
+
+    comments.forEach((comment) => {
+        displayComment(comment); 
+    });
+});
+
+
+//add new comment to page
+const form = document.querySelector('.comment__form');
+form.addEventListener('submit', addComment);

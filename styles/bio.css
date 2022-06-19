@@ -578,11 +578,23 @@
   border-radius: 50%;
   margin-right: 1rem;
   margin-top: 1.25rem;
-  background-color: #E1E1E1;
 }
 @media (min-width: 48rem) {
   .comment__avatar {
     width: 3rem;
+    height: 3rem;
+  }
+}
+.comment__avatar-missing {
+  width: 2.75rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  margin-right: 1rem;
+  background-color: #E1E1E1;
+}
+@media (min-width: 48rem) {
+  .comment__avatar-missing {
+    width: 3.25rem;
     height: 3rem;
   }
 }
@@ -620,6 +632,9 @@
     padding: 1rem;
   }
 }
+.comment__input-name:focus {
+  border: 1px solid #323232;
+}
 .comment__input-conversation {
   padding: 0.625rem 0.625rem 4rem 0.625rem;
   margin-bottom: 0.5rem;
@@ -633,6 +648,12 @@
   .comment__input-conversation {
     padding: 1rem 1rem 4rem 1rem;
   }
+}
+.comment__input-conversation:focus {
+  border: 1px solid #323232;
+}
+.comment__input-error {
+  border: 1px solid #D22D2D;
 }
 .comment__button {
   border: none;
@@ -662,6 +683,10 @@
 .comment__button:hover {
   background: #000000;
 }
+.comment__validation {
+  font-size: 0.9rem;
+  color: #D22D2D;
+}
 .comment__old {
   display: flex;
   align-items: flex-start;
@@ -674,6 +699,9 @@
     font-size: 0.9rem;
     padding: 1.5rem 0 0.5rem 0;
   }
+}
+.comment__old-container {
+  width: 100%;
 }
 .comment__info {
   display: flex;

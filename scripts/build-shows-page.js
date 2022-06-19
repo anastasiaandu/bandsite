@@ -75,11 +75,13 @@ showsArticle.appendChild(tableHead);
 
 
 //create a function to display each show
-function displayShow() {
+function displayShows() {
     shows.forEach((show) => {
         //table body
         const tableBody = document.createElement('ul');
         tableBody.classList.add('shows__container');
+
+        tableBody.classList.toggle('shows__container--selected');
 
         //table list for date
         const tableListDate = document.createElement('li');
@@ -142,4 +144,4 @@ function displayShow() {
 
 
 //call the function to display each show on the shows page
-displayShow();
+displayShows();
