@@ -89,31 +89,6 @@ function formatDate(date) {
 }
 
 
-// //declare function to format name to desired case
-// function formatName(string) {
-//     const names = string.split(' ');
-//     console.log(names);
-//     const newNames = names.map((string) => {
-//         return (name.charAt(0).toUpperCase() + name.slice(1));
-//     });
-//     const formattedName = newNames.join(' ');
-//     return formattedName;
-// }
-
-
-//format date
-// function formatDate(date, format) {
-//     const map = {
-//         mm: date.getMonth() + 1,
-//         dd: date.getDate(),
-//         yy: date.getFullYear().toString().slice(-2),
-//         yyyy: date.getFullYear()
-//     }
-
-//     return format.replace(/mm|dd|yy|yyy/gi, matched => map[matched])
-// }
-
-
 //create function to add new comment to the page
 const addComment = ((event) => {
     event.preventDefault(); 

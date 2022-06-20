@@ -77,11 +77,22 @@ showsArticle.appendChild(tableHead);
 //create a function to display each show
 function displayShows() {
     shows.forEach((show) => {
+
         //table body
         const tableBody = document.createElement('ul');
         tableBody.classList.add('shows__container');
 
-        tableBody.classList.toggle('shows__container--selected');
+        function focusShow() {
+            const highlightedShows = document.querySelectorAll('.shows__container--selected');
+            if (highlightedShows.length > 0) {
+                highlightedShows.forEach((highlightedShow) => {
+                    highlightedShow.classList.replace('shows__container--selected', 'shows__container');
+                });
+            } 
+            tableBody.classList.replace('shows__container', 'shows__container--selected');
+        }
+
+        tableBody.addEventListener('click', focusShow);
 
         //table list for date
         const tableListDate = document.createElement('li');
@@ -138,7 +149,6 @@ function displayShows() {
 
         //append comment to article section
         showsArticle.appendChild(tableBody);
-        console.log(tableBody);
     });
 }
 

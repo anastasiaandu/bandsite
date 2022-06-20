@@ -148,28 +148,21 @@
     }
 
     &__container {
-        list-style-type: none;
-        font-size: 0.8rem;
-        font-weight: 500;
-        padding: 0 1rem;
-        margin: 0;
-        border-bottom: 1px solid colors.$mercury;
-
+        @include mixins.shows-mobile;
+        
         @include mixins.tablet {
-            display: flex;
-            align-items: flex-end;
-            margin: 0 1rem;
-            padding: 0.5rem 1.25rem 1rem 1.25rem;
-            font-size: 0.9rem;
-        }
+            @include mixins.shows-tablet;
 
-        &:hover {
-            background-color: colors.$alabaster;
+            &:hover {
+                background-color: colors.$alabaster;
+            }
+    
+            &--selected {
+                @include mixins.shows-mobile;
+                @include mixins.shows-tablet;
+                background-color: colors.$mercury;
+            }
         }
-
-        // &::selection {
-        //     background-color: colors.$mercury;
-        // }
     }
 
     &__detail {
