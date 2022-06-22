@@ -80,13 +80,29 @@ comments.forEach((comment) => {
 });
 
 
-//declare function to get date
-function formatDate(date) {
-    const mm = (date.getMonth() + 1).toString().padStart(2, '0');
-    const dd = date.getDate().toString().padStart(2, '0');
-    const yyyy = date.getFullYear().toString();
-    return `${mm}/${dd}/${yyyy}`;
-}
+//format date
+// function formatDate(date, format) {
+//     const map = {
+//         mm: date.getMonth() + 1,
+//         dd: date.getDate(),
+//         yy: date.getFullYear().toString().slice(-2),
+//         yyyy: date.getFullYear()
+//     }
+
+//     return format.replace(/mm|dd|yy|yyy/gi, matched => map[matched])
+// }
+
+
+//declare function to format date to mm/dd/yy
+// function formatDate(date) {
+//     const mm = (date.getMonth() + 1).toString().padStart(2, '0');
+//     const dd = date.getDate().toString().padStart(2, '0');
+//     const yyyy = date.getFullYear().toString();
+//     return `${mm}/${dd}/${yyyy}`;
+// }
+
+
+const date = new Date();
 
 
 //create function to add new comment to the page
@@ -95,14 +111,49 @@ const addComment = ((event) => {
 
     commentSection.innerHTML = '';
 
+
+    //declare function to format name to desired case
+    function formatName(string) {
+        const names = string.split(' ');
+        const newNames = names.map((name) => {
+            return ((name.charAt(0).toUpperCase()) + (name.slice(1)).toLowerCase());
+        });
+        const formattedName = newNames.join(' ');
+        return formattedName;
+    }
+
+
+    //declare function to format date to dynamic date
+    const intervals = [
+        { label: 'year', seconds: 31536000 },
+        { label: 'month', seconds: 2592000 },
+        { label: 'day', seconds: 86400 },
+        { label: 'hour', seconds: 3600 },
+        { label: 'minute', seconds: 60 },
+        { label: 'second', seconds: 1 }
+    ];
+
+    function formatDate(date) {
+        const seconds = Math.floor((Date.now() - date.getTime()) / 1000);
+        const interval = intervals.find((interval) => {
+            return interval.seconds < seconds;
+        });
+        const count = Math.floor(seconds / interval.seconds);
+        return `${count} ${interval.label}${count !== 1 ? 's' : ''} ago`;
+    }
+
+
     const newComment = {};
     const formFieldName = document.querySelector('.comment__input-name');
     const formFieldComment = document.querySelector('.comment__input-conversation');
     const formFieldvalidation = document.querySelector('.comment__validation');
-    const userName = event.target.name.value;
-    const userDate = formatDate(new Date());
+
+
+    const userName = formatName(event.target.name.value);
+    const userDate = formatDate(date);
     const userImage = '';
     const userComment = event.target.comment.value;
+
 
     if(userName === '' || userComment === '') {
         formFieldName.classList.add('comment__input-error');
@@ -122,6 +173,7 @@ const addComment = ((event) => {
 
         event.target.reset();
     }
+
 
     comments.forEach((comment) => {
         displayComment(comment); 
