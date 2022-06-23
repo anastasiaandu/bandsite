@@ -432,23 +432,27 @@
     font-size: 0.9rem;
     cursor: pointer;
   }
-  .shows__container:hover {
-    background-color: #FAFAFA;
-  }
+}
+.shows__container:hover {
+  background-color: #FAFAFA;
+}
+.shows__container--selected {
+  list-style-type: none;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0 1rem;
+  margin: 0;
+  border-bottom: 1px solid #E1E1E1;
+  background-color: #E1E1E1;
+}
+@media (min-width: 48rem) {
   .shows__container--selected {
-    list-style-type: none;
-    font-size: 0.8rem;
-    font-weight: 500;
-    padding: 0 1rem;
-    margin: 0;
-    border-bottom: 1px solid #E1E1E1;
     display: flex;
     align-items: flex-end;
     margin: 0 1rem;
     padding: 0.5rem 1.25rem 1rem 1.25rem;
     font-size: 0.9rem;
     cursor: pointer;
-    background-color: #E1E1E1;
   }
 }
 .shows__detail {

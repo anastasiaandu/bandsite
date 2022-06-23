@@ -152,15 +152,18 @@
         
         @include mixins.tablet {
             @include mixins.shows-tablet;
+        }
 
-            &:hover {
-                background-color: colors.$alabaster;
-            }
-    
-            &--selected {
-                @include mixins.shows-mobile;
+        &:hover {
+            background-color: colors.$alabaster;
+        }
+
+        &--selected {
+            @include mixins.shows-mobile;
+            background-color: colors.$mercury;
+
+            @include mixins.tablet {
                 @include mixins.shows-tablet;
-                background-color: colors.$mercury;
             }
         }
     }

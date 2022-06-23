@@ -1,40 +1,26 @@
-//create an array of shows
-const shows = [
-    {
-        date: 'Mon Sept 06 2021',
-        venue: 'Ronald Lane',
-        location: 'San Francisco, CA'
-    },
-    {
-        date: 'Tue Sept 21 2021',
-        venue: 'Pier 3 East',
-        location: 'San Francisco, CA'
-    },
-    {
-        date: 'Fri Oct 15 2021',
-        venue: 'View Lounge',
-        location: 'San Francisco, CA'
-    },
-    {
-        date: 'Sat Nov 06 2021',
-        venue: 'Hyatt Agency',
-        location: 'San Francisco, CA'
-    },
-    {
-        date: 'Fri Nov 26 2021',
-        venue: 'Moscow Center',
-        location: 'San Francisco, CA'
-    },
-    {
-        date: 'Wed Dec 15 2021',
-        venue: 'Press Club',
-        location: 'San Francisco, CA'
-    }
-];
+const apiKey = '813d53df-37dc-4909-ba9e-3a96e45a5e6f';
+const showsURL = 'https://project-1-api.herokuapp.com/showdates/?api_key=813d53df-37dc-4909-ba9e-3a96e45a5e6f'
+
+
+//declare function to format date
+function formatDate(date) {
+    correctDate = new Date(Number(date));
+    
+    const days = ['Sun','Mon','Tue','Wed','Thur','Fri','Sat'];
+    const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sept','Oct','Nov','Dec'];
+
+    const dy = days[correctDate.getDay()];
+    const mm = months[correctDate.getMonth()];
+    const dd = correctDate.getDate().toString().padStart(2, '0');
+    const yy = correctDate.getFullYear().toString();
+
+    return `${dy} ${mm} ${dd} ${yy}`;
+}
 
 
 //get the parent to which the shows would be appended
 const showSection = document.querySelector('.shows');
+let shows = [];
 
 
 //shows section heading 
@@ -43,12 +29,10 @@ showsHeading.classList.add('shows__heading');
 showsHeading.innerText = 'Shows';
 showSection.appendChild(showsHeading);
 
-
 //shows section article 
 const showsArticle = document.createElement('article');
 showsArticle.classList.add('shows__body');
 showSection.appendChild(showsArticle);
-
 
 //table head
 const tableHead = document.createElement('ul');
@@ -69,12 +53,11 @@ tableHeadLocation.classList.add('shows__detail-header');
 tableHeadLocation.innerText = 'Location';
 tableHead.appendChild(tableHeadLocation);
 
-
 //append table head to article section
 showsArticle.appendChild(tableHead);
 
 
-//create a function to display each show
+// create a function to display all shows
 function displayShows() {
     shows.forEach((show) => {
 
@@ -105,7 +88,7 @@ function displayShows() {
 
         const showDateInfo = document.createElement('div');
         showDateInfo.classList.add('shows__date');
-        showDateInfo.innerText = show.date;
+        showDateInfo.innerText = formatDate(show.date);
         tableListDate.appendChild(showDateInfo);
 
         //table list for venue
@@ -119,7 +102,7 @@ function displayShows() {
 
         const showVenueInfo = document.createElement('div');
         showVenueInfo.classList.add('shows__venue');
-        showVenueInfo.innerText = show.venue;
+        showVenueInfo.innerText = show.place;
         tableListVenue.appendChild(showVenueInfo);
 
         //table list for location
@@ -153,5 +136,13 @@ function displayShows() {
 }
 
 
-//call the function to display each show on the shows page
-displayShows();
+//make axios request for shows
+axios 
+    .get(showsURL)
+    .then((response) => {
+        shows = response.data;
+        displayShows();
+    })
+    .catch((error) => {
+        console.log(error);
+    });
