@@ -367,13 +367,13 @@
         border: none;
         @include mixins.button;
         margin-top: 0.5rem;
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem;
 
         @include mixins.tablet {
             width: 10rem;
             margin-left: auto;
             margin-top: 1rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
 
         &:hover {
