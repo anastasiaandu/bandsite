@@ -1,4 +1,5 @@
 @use './partials/colors';
+@use './partials/variables';
 @use './partials/mixins';
 @use './partials/global';
 @use './partials/header';
@@ -302,7 +303,7 @@
             background-color: colors.$mercury;
 
             @include mixins.tablet {
-                width: 3.25rem;
+                width: 3.2rem;
                 height: 3rem;
             }
         }
@@ -413,5 +414,29 @@
 
     &__date {
         color: colors.$silver;
+    }
+
+    &__buttons {
+        padding-bottom: 0.8rem;
+    }
+
+    &__like {
+        @include mixins.comment-button;
+        transition: transform 0.3s;
+
+        &:hover {
+            background: colors.$bandsite-darkblack;
+            transform: variables.$scale;
+        }
+    }
+
+    &__delete {
+        @include mixins.comment-button;
+        transition: transform 0.3s;
+
+        &:hover {
+            background: colors.$bandsite-darkblack;
+            transform: variables.$scale;
+        }
     }
 }

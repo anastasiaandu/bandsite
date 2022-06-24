@@ -1,5 +1,5 @@
-const apiKey = '813d53df-37dc-4909-ba9e-3a96e45a5e6f';
-const showsURL = 'https://project-1-api.herokuapp.com/showdates/?api_key=813d53df-37dc-4909-ba9e-3a96e45a5e6f'
+const apiKey = '406c262f-f0aa-4a59-a6e6-a4822c46a938';
+const showsURL = `https://project-1-api.herokuapp.com/showdates/?api_key=${apiKey}`;
 
 
 //declare function to format date

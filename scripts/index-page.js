@@ -1,5 +1,6 @@
-const apiKey = '813d53df-37dc-4909-ba9e-3a96e45a5e6f';
-const commentsURL = 'https://project-1-api.herokuapp.com/comments/?api_key=813d53df-37dc-4909-ba9e-3a96e45a5e6f';
+const apiKey = '406c262f-f0aa-4a59-a6e6-a4822c46a938';
+const getURL = `https://project-1-api.herokuapp.com/comments/?api_key=${apiKey}`;
+const postURL = `https://project-1-api.herokuapp.com/comments/?api_key=${apiKey}`;
 
 
 //declare function to format name to desired case
@@ -20,7 +21,8 @@ const intervals = [
     { label: 'day', seconds: 86400 },
     { label: 'hour', seconds: 3600 },
     { label: 'minute', seconds: 60 },
-    { label: 'second', seconds: 1 }
+    { label: 'second', seconds: 1 },
+    { label: 'second', seconds: -10 }
 ];
 
 function formatDate(date) {
@@ -86,6 +88,65 @@ function displayComments() {
         text.innerText = comment.comment;
         commentContainer.appendChild(text);
 
+        //comment buttons
+        const commentButtons = document.createElement('div');
+        commentButtons.classList.add('comment__buttons');
+        commentContainer.appendChild(commentButtons); 
+
+        //like button
+        const likeButton = document.createElement('button');
+        likeButton.classList.add('comment__like');
+        if (comment.likes === 1) {
+            likeButton.innerText = `${comment.likes} Like`;
+        } else {
+            likeButton.innerText = `${comment.likes} Likes`;
+        }
+        commentButtons.appendChild(likeButton);
+
+        const likeComment = ((event) => {
+            event.preventDefault(); 
+
+                comment.likes++;
+                if (comment.likes === 1) {
+                    event.target.innerText = `${comment.likes} Like`;
+                } else {
+                    event.target.innerText = `${comment.likes} Likes`;
+                }
+                
+                axios
+                    .put(`https://project-1-api.herokuapp.com/comments/${comment.id}/like/?api_key=${apiKey}`)
+                    .then((response) => {
+                        console.log(response);
+                    })
+                    .catch((error) => {
+                        console.log(error);
+                    });
+        });
+        
+        likeButton.addEventListener('click', likeComment);
+
+        //delete button
+        const deleteButton = document.createElement('button');
+        deleteButton.classList.add('comment__delete');
+        deleteButton.innerText = 'Delete';
+        commentButtons.appendChild(deleteButton);
+
+        const deleteComment = ((event) => {
+            event.preventDefault(); 
+
+            commentSection.removeChild(userComment);
+            axios
+                .delete(`https://project-1-api.herokuapp.com/comments/${comment.id}/?api_key=${apiKey}`)
+                .then((response) => {
+                    console.log(response);
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
+        });
+
+        deleteButton.addEventListener('click', deleteComment);
+
         //append comment to webpage
         commentSection.appendChild(userComment);
     });  
@@ -94,7 +155,7 @@ function displayComments() {
 
 //make axios request for comments
 axios
-    .get(commentsURL)
+    .get(getURL)
     .then((response) => {
         comments = response.data.reverse();
         displayComments(); 
@@ -106,6 +167,7 @@ axios
 
 //create function to post new comment
 const addComment = ((event) => {
+
     event.preventDefault(); 
 
     commentSection.innerHTML = '';
@@ -115,15 +177,14 @@ const addComment = ((event) => {
     const formFieldComment = document.querySelector('.comment__input-conversation');
     const formFieldvalidation = document.querySelector('.comment__validation');
 
-
     const userName = formatName(event.target.name.value);
     const userComment = event.target.comment.value;
-
 
     if(userName === '' || userComment === '') {
         formFieldName.classList.add('comment__input-error');
         formFieldComment.classList.add('comment__input-error');
         formFieldvalidation.innerText = '***Please check that you have entered your name or comment***';
+        displayComments();
     } else {
         formFieldName.classList.remove('comment__input-error');
         formFieldComment.classList.remove('comment__input-error');
@@ -132,21 +193,20 @@ const addComment = ((event) => {
         newComment.name = userName;
         newComment.comment = userComment;
     
-        
         axios
-            .post(commentsURL, newComment)
+            .post(postURL, newComment)
             .then((response) => {
                 console.log(response);
-            })
-            .catch((error) => {
-                console.log(error);
-            });
-
-        axios
-            .get(commentsURL)
-            .then((response) => {
-                comments = response.data.reverse();
-                displayComments();
+                axios
+                    .get(getURL)
+                    .then((response) => {
+                        console.log(response);
+                        comments = response.data.reverse();
+                        displayComments(); 
+                    })
+                    .catch((error) => {
+                        console.log(error);
+                    });
             })
             .catch((error) => {
                 console.log(error);

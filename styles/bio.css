@@ -594,7 +594,7 @@
 }
 @media (min-width: 48rem) {
   .comment__avatar-missing {
-    width: 3.25rem;
+    width: 3.2rem;
     height: 3rem;
   }
 }
@@ -712,4 +712,35 @@
 }
 .comment__date {
   color: #AFAFAF;
+}
+.comment__buttons {
+  padding-bottom: 0.8rem;
+}
+.comment__like {
+  border: none;
+  border-radius: 4px;
+  color: #FFFFFF;
+  background-color: #323232;
+  padding: 0.2rem 0.5rem;
+  margin-right: 0.5rem;
+  width: 5rem;
+  transition: transform 0.3s;
+}
+.comment__like:hover {
+  background: #000000;
+  transform: scale(1.2);
+}
+.comment__delete {
+  border: none;
+  border-radius: 4px;
+  color: #FFFFFF;
+  background-color: #323232;
+  padding: 0.2rem 0.5rem;
+  margin-right: 0.5rem;
+  width: 5rem;
+  transition: transform 0.3s;
+}
+.comment__delete:hover {
+  background: #000000;
+  transform: scale(1.2);
 }/*# sourceMappingURL=bio.css.map */

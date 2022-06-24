@@ -64,7 +64,7 @@
     cursor: pointer;
 }
 
-@mixin button{
+@mixin button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -77,6 +77,16 @@
     text-transform: uppercase;
     background-color: colors.$bandsite-black;
     padding: 0.5rem 0;
+}
+
+@mixin comment-button {
+    border: none;
+    border-radius: 4px;
+    color: colors.$white;
+    background-color: colors.$bandsite-black;
+    padding: 0.2rem 0.5rem;
+    margin-right: 0.5rem;
+    width: 5rem;
 }
 
 @mixin tablet {
