@@ -39,7 +39,7 @@ const tableHead = document.createElement('ul');
 tableHead.classList.add('shows__detail', 'shows__detail--top');
 
 const tableHeadDate = document.createElement('li');
-tableHeadDate.classList.add('shows__detail-header', 'shows__detail-header--date');
+tableHeadDate.classList.add('shows__detail-header');
 tableHeadDate.innerText = 'Date';
 tableHead.appendChild(tableHeadDate);
 
@@ -52,6 +52,10 @@ const tableHeadLocation = document.createElement('li');
 tableHeadLocation.classList.add('shows__detail-header');
 tableHeadLocation.innerText = 'Location';
 tableHead.appendChild(tableHeadLocation);
+
+const headerMargin = document.createElement('div');
+headerMargin.classList.add('shows__header-margin');
+tableHead.appendChild(headerMargin);
 
 //append table head to article section
 showsArticle.appendChild(tableHead);

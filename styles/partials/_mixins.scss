@@ -57,11 +57,17 @@
 
 @mixin shows-tablet {
     display: flex;
+    justify-content: space-between;
     align-items: flex-end;
     margin: 0 1rem;
     padding: 0.5rem 1.25rem 1rem 1.25rem;
     font-size: 0.9rem;
     cursor: pointer;
+}
+
+@mixin shows-row {
+    padding-bottom: 0.75rem;
+    width: 11.5rem;
 }
 
 @mixin button {
