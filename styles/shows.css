@@ -483,6 +483,16 @@
 .shows__detail-header {
   width: 11.5rem;
 }
+@media (min-width: 80rem) {
+  .shows__detail-header {
+    width: 9.5rem;
+  }
+}
+@media (min-width: 80rem) {
+  .shows__detail-header--date {
+    width: 15.5rem;
+  }
+}
 @media (min-width: 48rem) {
   .shows__header-margin {
     width: 9.5rem;
@@ -499,6 +509,11 @@
     width: 11.5rem;
   }
 }
+@media (min-width: 80rem) {
+  .shows__date {
+    width: 15.5rem;
+  }
+}
 .shows__venue {
   padding-bottom: 0.5rem;
 }
@@ -508,6 +523,11 @@
     width: 11.5rem;
   }
 }
+@media (min-width: 80rem) {
+  .shows__venue {
+    width: 9.5rem;
+  }
+}
 .shows__location {
   padding-bottom: 0.5rem;
 }
@@ -515,6 +535,11 @@
   .shows__location {
     padding-bottom: 0.75rem;
     width: 11.5rem;
+  }
+}
+@media (min-width: 80rem) {
+  .shows__location {
+    width: 9.5rem;
   }
 }
 .shows__button {

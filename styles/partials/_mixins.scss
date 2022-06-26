@@ -93,6 +93,12 @@
     padding: 0.2rem 0.5rem;
     margin-right: 0.5rem;
     width: 5rem;
+    transition: transform 0.3s;
+}
+
+@mixin button-hover {
+    background: colors.$bandsite-darkblack;
+    transform: variables.$scale;
 }
 
 @mixin tablet {

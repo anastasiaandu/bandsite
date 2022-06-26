@@ -39,7 +39,7 @@ const tableHead = document.createElement('ul');
 tableHead.classList.add('shows__detail', 'shows__detail--top');
 
 const tableHeadDate = document.createElement('li');
-tableHeadDate.classList.add('shows__detail-header');
+tableHeadDate.classList.add('shows__detail-header', 'shows__detail-header--date');
 tableHeadDate.innerText = 'Date';
 tableHead.appendChild(tableHeadDate);
 

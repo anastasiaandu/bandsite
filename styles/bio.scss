@@ -421,21 +421,17 @@
 
     &__like {
         @include mixins.comment-button;
-        transition: transform 0.3s;
 
         &:hover {
-            background: colors.$bandsite-darkblack;
-            transform: variables.$scale;
+            @include mixins.button-hover;
         }
     }
 
     &__delete {
         @include mixins.comment-button;
-        transition: transform 0.3s;
 
         &:hover {
-            background: colors.$bandsite-darkblack;
-            transform: variables.$scale;
+            @include mixins.button-hover;
         }
     }
 }

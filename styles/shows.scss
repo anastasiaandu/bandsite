@@ -195,6 +195,17 @@
 
     &__detail-header {
         width: 11.5rem;
+
+        @include mixins.desktop {
+            width: 9.5rem;
+        }
+
+        &--date {
+            @include mixins.desktop {
+                width: 15.5rem;
+            }
+        }
+
     }
 
     &__header-margin {
@@ -212,6 +223,10 @@
         @include mixins.tablet {
             @include mixins.shows-row;
         }
+
+        @include mixins.desktop {
+            width: 15.5rem;
+        }
     }
 
     &__venue {
@@ -220,6 +235,10 @@
         @include mixins.tablet {
             @include mixins.shows-row;
         }
+
+        @include mixins.desktop {
+            width: 9.5rem;
+        }
     }
 
     &__location {
@@ -227,6 +246,10 @@
 
         @include mixins.tablet {
              @include mixins.shows-row;
+        }
+
+        @include mixins.desktop {
+            width: 9.5rem;
         }
     }
 
