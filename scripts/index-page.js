@@ -115,11 +115,13 @@ function displayComments() {
                 
                 axios
                     .put(`https://project-1-api.herokuapp.com/comments/${comment.id}/like/?api_key=${apiKey}`)
-                    .then((response) => {
-                        console.log(response);
+                    .then(() => {
                     })
-                    .catch((error) => {
-                        console.log(error);
+                    .catch(() => {
+                        const likeError = document.createElement('span');
+                        likeError.classList.add('comment__validation');
+                        likeError.innerText = 'I\'m sorry you cannot like the comment right now, please try again later.'
+                        commentButtons.appendChild(likeError);
                     });
         });
         
@@ -137,11 +139,13 @@ function displayComments() {
             commentSection.removeChild(userComment);
             axios
                 .delete(`https://project-1-api.herokuapp.com/comments/${comment.id}/?api_key=${apiKey}`)
-                .then((response) => {
-                    console.log(response);
+                .then(() => {
                 })
-                .catch((error) => {
-                    console.log(error);
+                .catch(() => {
+                    const deleteError = document.createElement('span');
+                    deleteError.classList.add('comment__validation');
+                    deleteError.innerText = 'I\'m sorry you cannot delete the comment right now, please try again later.'
+                    commentButtons.appendChild( deleteError);
                 });
         });
 
@@ -195,21 +199,21 @@ const addComment = ((event) => {
     
         axios
             .post(postURL, newComment)
-            .then((response) => {
-                console.log(response);
-                axios
+            .then(() => {
+                return axios
                     .get(getURL)
                     .then((response) => {
-                        console.log(response);
                         comments = response.data.reverse();
                         displayComments(); 
                     })
-                    .catch((error) => {
-                        console.log(error);
+                    .catch(() => {
                     });
             })
-            .catch((error) => {
-                console.log(error);
+            .catch(() => {
+                const postError = document.createElement('span');
+                postError.classList.add('comment__validation');
+                postError.innerText = 'I\'m sorry you cannot post a comment right now, please try again later.'
+                formFieldvalidation.appendChild( postError);
             });
 
         event.target.reset();
